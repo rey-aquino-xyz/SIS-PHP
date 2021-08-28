@@ -35,14 +35,14 @@ session_start();
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="student\student_register.php" data-toggle="modal"
                         class="nav-link nav-pill px-2 link-primary">Create New</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+                <li><a href="about.php" class="nav-link px-2 link-dark">About</a></li>
             </ul>
             <?php if (isset($_SESSION['username'])) { ?>
             <div class="col-md-3 text-end">
                 <a href="user/user_dashboard.php?id=<?php echo $_SESSION[
                     'id'
                 ]; ?>" style="text-decoration: none;">
-                    <button type="button" class="btn btn-primary"><i class="bi bi-person-circle"></i>
+                    <button type="button" class="btn btn-light"><i class="bi bi-person-circle"></i>
                         <?php echo $_SESSION['username']; ?>
                     </button>
                 </a>

@@ -45,7 +45,7 @@ try {
                 <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username" required>
                 <label for="floatingInput">Username</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mt-2 mb-3">
                 <input type="password" name="password" class="form-control" id="floatingPassword"
                     placeholder="Password" required>
                 <label for="floatingPassword">Password</label>
@@ -56,7 +56,7 @@ try {
                     Already registered? <a href="../index.php">Login</a>
                 </label>
             </div>
-            <p class="mt-5 mb-3 text-muted text-center">&copy; Mark D. Dela Rosa &trade;</p>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; Rey Aquino&trade;</p>
         </form>
 
     </div>

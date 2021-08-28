@@ -5,28 +5,25 @@ DBHelper::CreateDatabase();
 $message = '';
 try {
     if (isset($_POST['login'])) {
-        $count = DBHelper::GetDataWithParam(
-            'SELECT * FROM user WHERE Username = ? AND Password = ?',
-            [$_POST['username'], $_POST['password']]
-        );
-        if ($count > 0) {
-            foreach ($count as $row) {
+        $query = 'SELECT * FROM user WHERE Username = ? AND Password = ?';
+        $login_param = [$_POST['username'], $_POST['password']];
+        $sth = DBHelper::CheckIfExist($query, $login_param);
+        if ($sth > 0) {
+            foreach (DBHelper::GetDataWithParam($query, $login_param) as $row) {
                 $_SESSION['id'] = $row['Id'];
             }
             $_SESSION['username'] = $_POST['username'];
             header('location:home.php');
         } else {
-            $message = 'Invalid Username/Password';
+            $message = 'is-invalid';
         }
     }
 } catch (PDOException $error) {
     $message = $error->getMessage();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,32 +34,32 @@ try {
 </head>
 
 <body class="center">
-    <br/><br/><br/>
+    <br /><br /><br />
     <div class="container mt-5" style="width: 350px;">
         <form method="POST">
             <div class="container text-center">
                 <img src="assets/code.png" alt="" width="72" height="72">
-            </div> 
+            </div>
             <h1 class="h3 mb-3 fw-normal text-center">{ Please sign in }</h1>
-            <?php if (isset($message)) { ?>
-            <h5 class="mb-3 fw-normal text-danger text-center"> <?php echo $message; ?></h5>
+            <?php if (isset($message)) { ?>          
+              <div class="form-floating">
+                <input type="text" name="username" class="form-control  <?php echo $message; ?>" id="floatingInput<?php echo $message; ?>" placeholder="Username" 
+                    required>
+                <label for="floatingInput<?php echo $message; ?>">Username</label>
+            </div>
+             <div class="form-floating mt-2">
+                <input type="password" name="password" class="form-control <?php echo $message; ?>" id="floatingPassword<?php echo $message; ?>" placeholder="Password"
+                    required>
+                <label for="floatingPassword<?php echo $message; ?>">Password</label>
+            </div>
             <?php } ?>
-            <div class="form-floating">
-                <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username" required>
-                <label for="floatingInput">Username</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword"
-                    placeholder="Password" required>
-                <label for="floatingPassword">Password</label>
-            </div>
             <div class="mt-3 mb-3 text-center">
                 <label>
                     Don't have account? <a href="user/user_register.php">Create one!</a>
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" name="login" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted text-center">&copy; Mark D. Dela Rosa &trade;</p>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2022</p>
         </form>
 
     </div>

@@ -67,14 +67,14 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="../home.php" data-toggle="modal" class="nav-link nav-pill px-2 link-primary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+                <li><a href="../about.php" class="nav-link px-2 link-dark">About</a></li>
             </ul>
             <?php if (isset($_SESSION['username'])) { ?>
           <div class="col-md-3 text-end">
                 <a href="../user/user_dashboard.php?id=<?php echo $_SESSION[
                     'id'
                 ]; ?>" style="text-decoration: none;">
-                    <button type="button" class="btn btn-primary"><i class="bi bi-person-circle"></i> <?php echo $_SESSION[
+                    <button type="button" class="btn btn-light"><i class="bi bi-person-circle"></i> <?php echo $_SESSION[
                         'username'
                     ]; ?></button>
                 </a>
@@ -143,7 +143,7 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
  <button class="w-100 btn btn-lg btn-primary" name="update" type="submit">Update</button>
             </div>
            
-            <p class="mt-3 mb-3 text-muted text-center">&copy; Mark D. Dela Rosa &trade;</p>
+            <p class="mt-3 mb-3 text-muted text-center">&copy; Rey Aquino&trade;</p>
         </form>
     </div>
     <?php } else {header('Location:../index.php');} ?>
