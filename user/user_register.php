@@ -3,14 +3,12 @@ session_start();
 require_once '/xampp/htdocs/sis/helper/dbhelper.php';
 $message = '';
 try {
-    $connect = DBHelper::GetConnectionString();
-    $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if (isset($_POST['register'])) {
-        $p_username = $_POST['username'];
-        $p_password = $_POST['password'];
-
-        $query = "INSERT INTO user (Username, Password) VALUES ('$p_username', '$p_password')";
-        DBHelper::ExecuteCommand($query);
+        $query = 'INSERT INTO user (Username, Password) VALUES (?,?)';
+        DBHelper::ExecuteCommandWithParam($query, [
+            $_POST['username'],
+            $_POST['password'],
+        ]);
         header('location:../index.php');
     }
 } catch (PDOException $error) {

@@ -93,20 +93,7 @@
         }
         $DBConnection = null;
     }
-    public static function ExecuteCommand($query)
-    {
-        try {
-            $DBConnection = DBHelper::GetConnectionString();
-            $DBConnection->setAttribute(
-                PDO::ATTR_ERRMODE,
-                PDO::ERRMODE_EXCEPTION
-            );
-            $DBConnection->exec($query);
-        } catch (PDOException $e) {
-            echo 'Command failed: ' . $e->getMessage();
-        }
-        $DBConnection = null;
-    }
+
     public static function GetDataWithParam($query, array $param)
     {
         try {
