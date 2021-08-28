@@ -45,9 +45,8 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="../assets/css/bootstrap.5.0.2.min.css"  rel="stylesheet">
+    <link href="../assets/css/bootstrap.1.5.0-icons.css" rel="stylesheet">
     <title>SIS | Edit Student</title>
 </head>
 
@@ -74,9 +73,12 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
                 <a href="../user/user_dashboard.php?id=<?php echo $_SESSION[
                     'id'
                 ]; ?>" style="text-decoration: none;">
-                    <button type="button" class="btn btn-light"><i class="bi bi-person-circle"></i> <?php echo $_SESSION[
-                        'username'
-                    ]; ?></button>
+                    <button type="button" class="btn btn-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>
+                    <strong> <?php echo $_SESSION['username']; ?></button>
                 </a>
             </div>
         </header>
@@ -92,21 +94,21 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
             <?php } ?>
 
             <div class="row">
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="firstname" class="form-control" id="floatingInput"
                             placeholder="Firstname" value="<?php echo $firstname; ?>" required>
                         <label for="floatingInput">Firstname</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="middlename" class="form-control" id="floatingInput"
                             placeholder="Middlename" value="<?php echo $middlename; ?>"  required>
                         <label for="floatingInput">Middlename</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="lastname" class="form-control" id="floatingInput"
                             placeholder="Lastname" value="<?php echo $lastname; ?>"  required>
@@ -116,21 +118,21 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
             </div>
 
             <div class="row mt-3">
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="course" class="form-control" id="floatingInput"
                             placeholder="Course" value="<?php echo $course; ?>"  required>
                         <label for="floatingInput">Course</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="year" class="form-control" id="floatingInput"
                             placeholder="Year" value="<?php echo $year; ?>"  required>
                         <label for="floatingInput">Year</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm">
                     <div class="form-floating">
                         <input type="text" name="section" class="form-control" id="floatingInput"
                             placeholder="Section" value="<?php echo $section; ?>"  required>
@@ -147,9 +149,7 @@ foreach (DBHelper::GetDataWithParam($sql, [$id]) as $row) {
         </form>
     </div>
     <?php } else {header('Location:../index.php');} ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="../assets/js/bootstrap.5.0.2.js"></script>
 </body>
 
 </html>

@@ -23,9 +23,7 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../assets/css/bootstrap.5.0.2.min.css"  rel="stylesheet" type="text/css">
     <title>SIS | Register</title>
 </head>
 
@@ -37,7 +35,7 @@ try {
                 <img src="../assets/code.png" alt="" width="72" height="72">
             </div> 
           
-            <h1 class="h3 mb-3 fw-normal text-center">{ Register Account }</h1>
+            <h1 class="h3 mb-3 fw-normal text-center">Create account</h1>
             <?php if (isset($message)) { ?>
             <h5 class="mb-3 fw-normal text-danger text-center"> <?php echo $message; ?></h5>
             <?php } ?>
@@ -56,14 +54,12 @@ try {
                     Already registered? <a href="../index.php">Login</a>
                 </label>
             </div>
-            <p class="mt-5 mb-3 text-muted text-center">&copy; Rey Aquino&trade;</p>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; 2021-2022;</p>
         </form>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+     <script src="../assets/js/bootstrap.5.0.2.js"></script>
 </body>
 
 </html>
