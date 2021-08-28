@@ -4,11 +4,10 @@ require_once '/xampp/htdocs/sis/helper/dbhelper.php';
 $message = '';
 try {
     if (isset($_POST['register'])) {
-        $query = 'INSERT INTO user (Username, Password) VALUES (?,?)';
-        DBHelper::ExecuteCommandWithParam($query, [
-            $_POST['username'],
-            $_POST['password'],
-        ]);
+        DBHelper::ExecuteCommandWithParam(
+            'INSERT INTO user (Username, Password) VALUES (?,?)',
+            [$_POST['username'], $_POST['password']]
+        );
         header('location:../index.php');
     }
 } catch (PDOException $error) {
